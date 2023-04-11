@@ -102,7 +102,19 @@
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
           
-          
+          var canvas2 = document.getElementById('myCanvas2');
+          var context2 = canvas.getContext("2d");
+         
+          var imageData = context.getImageData(0, 0, 600, 500)
+          var data = imageData.data;
+         
+          for (let i = 0; i < data.length; i += 4) {
+           data[i] = data[i] / 2;  
+           data[i + 1] = data[i + 1] / 2; 
+           data[i + 2] = data[i + 2] * 1.5;
+          }
+         
+          context2.putImageData(imageData, 0, 0);
           
           
         } // end of img.onload
@@ -149,7 +161,7 @@
         var context2 = canvas.getContext("2d");
         context2.font = '20pt Calibri';
         context2.fillStyle = "black";
-        context2.fillText("Original image will go here", 10, 20);
+        context2.fillText("Altered image will go here", 10, 20);
       </script>
      
     </div><!-- /content -->
