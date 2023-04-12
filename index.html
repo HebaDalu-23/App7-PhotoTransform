@@ -102,11 +102,11 @@
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
           
-          var canvas2 = document.getElementById('myCanvas2');
-          var context2 = canvas2.getContext("2d");
+          var canvas2 = document.getElementById('myCanvas2'); // this creates a new variable that initiaties and refers to the second canvas that i created and called 'myCanvas2'
+          var context2 = canvas2.getContext("2d"); // this assigns the context in the canvas and helps said context be retrieved 
          
-          var imageData = context.getImageData(0, 0, 600, 500)
-          var data = imageData.data;
+          var imageData = context.getImageData(0, 0, 600, 500) // this creates a variable and specifies to take the data from the first canvas from the (x,y) dimensions of (0,0) and all 600 x 500 pixels
+          var data = imageData.data; // this creates a new variable called data that aids in altering the image for the blue overlay effect
          
           for (let i = 0; i < data.length; i += 4) {
            data[i] = data[i] / 2;  
@@ -114,7 +114,7 @@
            data[i + 2] = data[i + 2] * 1.5;
           }
          
-          context2.putImageData(imageData, 0, 0);
+          context2.putImageData(imageData, 0, 0); // this helps put the image that was uploaded to the first canvas onto all dimensions of the second canvas with the added blue overlay effect
          
         } // end of img.onload
         
