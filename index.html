@@ -24,10 +24,10 @@
   http://stackoverflow.com/questions/11929099/html5-canvas-drawimage-ratio-bug-ios
   
   Brief Description of Goal of Code:
-  blah, blah, blah,
+  The goal of this code is to create an app that can take an image, either one chosen from a gallery or one taken in the moment, and alter it by applying a blue overlay effect to the image.
  
   Known Issues:
-  blah, blah, blah, blah
+  None at the moment
 -->
 
  <head>
@@ -149,18 +149,18 @@
       <script> /* This script initiates the canvas and puts the text on the canvas "myCanvas" */
         var canvas = document.getElementById('myCanvas'); // this calls the first canvas
         var context = canvas.getContext("2d"); // this helps in retrieving the context and information from the first canvas
-        context.font = '20pt Calibri'; // 
-        context.fillStyle = "black";
-        context.fillText("Original image will go here", 10, 20);
+        context.font = '20pt Calibri'; // this line of code establishes Calibri as a font in 20 point size on the first canvas
+        context.fillStyle = "black"; // this establishes black as the color of the text
+        context.fillText("Original image will go here", 10, 20); // this displays the text so that users know the first canvas is where the original image is supposed to go
       </script>
                                                       
       <canvas id="myCanvas2" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
-      <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
-        var canvas2 = document.getElementById('myCanvas2');
-        var context2 = canvas2.getContext("2d");
-        context2.font = '20pt Calibri';
-        context2.fillStyle = "black";
-        context2.fillText("Altered image will go here", 10, 20);
+      <script> /* This script initiates the canvas and puts the text on the canvas "myCanvas2" */
+        var canvas2 = document.getElementById('myCanvas2'); // this calls the second canvas
+        var context2 = canvas2.getContext("2d");// this helps in retrieving context from the first canvas onto the second canvas
+        context2.font = '20pt Calibri'; // this line of code establilshes Calibri as a font in 20 point size on the second canvas
+        context2.fillStyle = "black"; // this establishes black as the color of the text
+        context2.fillText("Altered image will go here", 10, 20); // this displays the text so that users know the first canvas is where the altered image with the blue overlay effect is supposed to go
       </script>
      
     </div><!-- /content -->
