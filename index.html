@@ -112,7 +112,7 @@
            data[i] = data[i] / 2;  
            data[i + 1] = data[i + 1] / 2; 
            data[i + 2] = data[i + 2] * 1.5;
-          }
+          } // lines 111-115 were provided by chatGPT when i asked it how to create a blue overlay effect using canvas html and RGB
          
           context2.putImageData(imageData, 0, 0); // this helps put the image that was uploaded to the first canvas onto all dimensions of the second canvas with the added blue overlay effect
          
@@ -146,10 +146,10 @@
       <div id="messageDisplayArea"></div>
       
       <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
-      <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
-        var canvas = document.getElementById('myCanvas');
-        var context = canvas.getContext("2d");
-        context.font = '20pt Calibri';
+      <script> /* This script initiates the canvas and puts the text on the canvas "myCanvas" */
+        var canvas = document.getElementById('myCanvas'); // this calls the first canvas
+        var context = canvas.getContext("2d"); // this helps in retrieving the context and information from the first canvas
+        context.font = '20pt Calibri'; // 
         context.fillStyle = "black";
         context.fillText("Original image will go here", 10, 20);
       </script>
