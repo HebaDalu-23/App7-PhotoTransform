@@ -108,10 +108,10 @@
           var imageData = context.getImageData(0, 0, 600, 500) // this creates a variable and specifies to take the data from the first canvas from the (x,y) dimensions of (0,0) and all 600 x 500 pixels
           var data = imageData.data; // this creates a new variable called data that aids in altering the image for the blue overlay effect
          
-          for (let i = 0; i < data.length; i += 4) {
-           data[i] = data[i] / 2;  
-           data[i + 1] = data[i + 1] / 2; 
-           data[i + 2] = data[i + 2] * 1.5;
+          for (let i = 0; i < data.length; i += 4) { // this helps to create the overlay effect on every single pixel in the canvas
+           data[i] = data[i] / 2; // this line of code divides the amount of red (R) from RGB in two, helping to create the blue overlay
+           data[i + 1] = data[i + 1] / 2; // this line of code divides the amount of green (G) from RGB in two, helping to create the blue overlay
+           data[i + 2] = data[i + 2] * 1.5; // this line of code multiplies the amount of blue (B) from RGB by one and a half times, helping to intensify the blue in the image and enhance the blue overlay effect
           } // lines 111-115 were provided by chatGPT when i asked it how to create a blue overlay effect using canvas html and RGB
          
           context2.putImageData(imageData, 0, 0); // this helps put the image that was uploaded to the first canvas onto all dimensions of the second canvas with the added blue overlay effect
@@ -145,7 +145,7 @@
       </div>
       <div id="messageDisplayArea"></div>
       
-      <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
+      <canvas id="myCanvas" width=600 height=500 style="border:3px solid #d3d3d3;"></canvas>
       <script> /* This script initiates the canvas and puts the text on the canvas "myCanvas" */
         var canvas = document.getElementById('myCanvas'); // this calls the first canvas
         var context = canvas.getContext("2d"); // this helps in retrieving the context and information from the first canvas
@@ -154,7 +154,7 @@
         context.fillText("Original image will go here", 10, 20); // this displays the text so that users know the first canvas is where the original image is supposed to go
       </script>
                                                       
-      <canvas id="myCanvas2" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
+      <canvas id="myCanvas2" width=600 height=500 style="border:3px solid #d3d3d3;"></canvas>
       <script> /* This script initiates the canvas and puts the text on the canvas "myCanvas2" */
         var canvas2 = document.getElementById('myCanvas2'); // this calls the second canvas
         var context2 = canvas2.getContext("2d");// this helps in retrieving context from the first canvas onto the second canvas
